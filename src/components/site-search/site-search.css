@@ -1,0 +1,6 @@
+.DocSearch-Button {
+  @apply md:rounded-lg;
+  --docsearch-text-color: oklch(var(--bc) / 0.5);
+  --docsearch-searchbox-background: oklch(var(--b2));
+  --docsearch-searchbox-focus-background: oklch(var(--b2));
+}

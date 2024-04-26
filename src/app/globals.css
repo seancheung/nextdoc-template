@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+article.prose table {
+  @apply table text-left;
+}
+
+pre.has-focused .line:not(.focused) {
+  opacity: 0.7;
+  transition:
+    filter 0.35s,
+    opacity 0.35s;
+  filter: blur(0.095rem);
+}
+
+pre.has-focused:hover .line:not(.focused) {
+  filter: blur(0);
+  opacity: 1;
+}
+
+pre.has-diff .line.diff.add {
+  background-color: oklch(var(--su) / 0.5);
+  transition: background-color 0.5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 48px);
+  display: inline-block;
+}
+
+pre.has-diff .line.diff.add:before {
+  content: "+";
+  color: oklch(var(--su));
+}
+
+pre.has-diff .line.diff.remove {
+  background-color: oklch(var(--er) / 0.5);
+  transition: background-color 0.5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 48px);
+  display: inline-block;
+  opacity: 0.7;
+}
+
+pre.has-diff .line.diff.remove:before {
+  content: "-";
+  color: oklch(var(--er));
+}
+
+pre.has-highlighted .line.highlighted {
+  background-color: oklch(var(--a) / 0.3);
+  transition: background-color 0.5s;
+  margin: 0 -16px;
+  padding: 0 16px;
+  width: calc(100% + 32px);
+  display: inline-block;
+}
+
+pre .highlighted-word {
+  background-color: oklch(var(--a) / 0.3);
+  border: 1px solid oklch(var(--a));
+  padding: 1px 3px;
+  margin: -1px -3px;
+}
+
+code {
+  counter-reset: line;
+  counter-increment: line calc(var(--line-start, 1) - 1);
+}
+
+code > .line:not(:last-child)::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
