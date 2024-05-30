@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FlexCompiler",
-  description: "In-Editor Compiler for Unity 3D",
+  title: "Nextdoc",
+  description: "Write your docs in markdown with Next.js",
 };
 
 export default function RootLayout({

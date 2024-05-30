@@ -3,7 +3,7 @@ import { visit } from "unist-util-visit";
 /** @typedef {{classNames: {[x: string]: string[]}}} Options */
 
 /** @type {import('unified').Plugin} */
-export default function remakrClassNames(options) {
+export default function remarkClassNames(options) {
   return (tree, file) => {
     /** @type {Options} */
     const { classNames = {} } = options || {};

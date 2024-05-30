@@ -6,7 +6,7 @@ import { visit } from "unist-util-visit";
 /** @typedef {{layoutWrapper: string; pages: NavGroup[]}} Options */
 
 /** @type {import('unified').Plugin} */
-export default function remakrLayout(options) {
+export default function remarkLayout(options) {
   /** @type {Options} */
   const { layoutWrapper, pages } = options || {};
   return (tree, file) => {

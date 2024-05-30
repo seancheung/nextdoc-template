@@ -11,7 +11,7 @@ import remarkReadingTime from "remark-reading-time";
 import remarkExternalLink from "./src/plugins/remark-external-link.mjs";
 import remarkFrontmatter from "./src/plugins/remark-frontmatter.mjs";
 import remarkHeading from "./src/plugins/remark-heading.mjs";
-import remakrLayout from "./src/plugins/remark-layout.mjs";
+import remarkLayout from "./src/plugins/remark-layout.mjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -40,7 +40,7 @@ const withMDX = createMDX({
       remarkHeading,
       remarkExternalLink,
       [
-        remakrLayout,
+        remarkLayout,
         { layoutWrapper: "@/components/mdx-layout-wrapper", pages: "@/pages" },
       ],
     ],
